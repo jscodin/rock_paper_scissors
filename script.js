@@ -39,7 +39,7 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-const playerSelection = "scissors";
+const playerSelection = "ROCk";
 const computerSelection = getComputerChoice();
 console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+console.log(playRound(playerSelection.toLowerCase(), computerSelection));
