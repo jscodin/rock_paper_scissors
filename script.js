@@ -16,25 +16,25 @@ return pcChoice, pcList[pcChoice];
 function playRound(playerSelection, computerSelection) {
 
   if (playerSelection === "rock" && computerSelection === "Scissors") {
-    return "Rock beats scissors, you win!";
+    return "You win!";
   }
    else if (playerSelection === "rock" && computerSelection === "Rock") {
-    return "Oops it's a draw..";
+    return "You draw!"
   }
   else if (playerSelection === "scissors" && computerSelection === "Paper") {
-    return "Scissors beats paper, you win!";
+    return "You win!";
   }
   else if (playerSelection === "scissors" && computerSelection === "Scissors") {
-    return "Oops it's a draw..";
+    return "You draw!"
   }
   else if (playerSelection === "paper" && computerSelection === "Rock") {
-    return "Paper beats rock, you win!";
+    return "You win!";
   }
   else if (playerSelection === "paper" && computerSelection === "Paper") {
-    return "Oops it's a draw..";
+    return "You draw!"
   }
   else {
-    return "Oh no, you lose this time!";
+    return "You lose!";
   }
 
 }
@@ -43,3 +43,47 @@ const playerSelection = "ROCk";
 const computerSelection = getComputerChoice();
 console.log(computerSelection);
 console.log(playRound(playerSelection.toLowerCase(), computerSelection));
+
+// let result = playRound(playerSelection.toLowerCase(), computerSelection);
+
+//let playerScore = 0;
+//let computerScore = 0;
+
+/* function game() {
+
+if (playRound === "You win!") {
+
+playerScore++
+  
+} else {
+  
+}
+
+
+
+playRound
+
+playRound
+
+playRound
+
+playRound
+
+if (playerScore > computerScore) {
+  return "Well done, you win!"
+} else if {
+  return "Unlucky, try again next time"
+}
+
+/* if (playRound === ) {
+  
+} else {
+  
+}  
+playerScore++
+
+computerScore++
+
+
+} */
+
