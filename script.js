@@ -39,51 +39,37 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-const playerSelection = "ROCk";
-const computerSelection = getComputerChoice();
-console.log(computerSelection);
-console.log(playRound(playerSelection.toLowerCase(), computerSelection));
 
-// let result = playRound(playerSelection.toLowerCase(), computerSelection);
+function game() {
 
-//let playerScore = 0;
-//let computerScore = 0;
+  const computerSelection = getComputerChoice();
+  console.log(computerSelection);
+  let playerPrompt = prompt("Choose your weapon: ");
+  playRound(playerPrompt.toLowerCase(), computerSelection)
+  console.log(playRound(playerPrompt, computerSelection));
+}
 
-/* function game() {
+function playGame() {
 
-if (playRound === "You win!") {
-
-playerScore++
-  
-} else {
+  for (let i = 0; i < 5; i++) {
+   game();
+  }
   
 }
 
+playGame();
 
 
-playRound
+/* function finalResult() {
 
-playRound
-
-playRound
-
-playRound
-
-if (playerScore > computerScore) {
-  return "Well done, you win!"
-} else if {
-  return "Unlucky, try again next time"
-}
-
-/* if (playRound === ) {
+  if (playerScore > computerScore) {
+    return "Well done, you win!";
+  } else if (computerScore > playerScore){
+    return "Unlucky, try again next time";
+  } else {
+      return "Wow it's a tie!"
+    }
   
-} else {
-  
-}  
-playerScore++
-
-computerScore++
-
-
 } */
+
 
