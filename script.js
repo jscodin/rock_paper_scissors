@@ -38,7 +38,6 @@ function playRound(playerSelection, computerSelection) {
     return "You lose!";
   }
 
-
 }
 
 // Keeps score
@@ -49,14 +48,19 @@ function score(result) {
 
   if (result === "You win!") {
     pScore++;
+    alert(`You win! Your score: ${pScore}`)
     console.log(pScore + " player");
   }
   else if (result === "You lose!") {
     cScore++;
+    alert(`You win! Computer score: ${cScore}`)
     console.log(cScore + " computer");
+  } else {
+    alert(`You draw!`)
   }
 
 }
+
 // This allows the player to input their choice and play the game
 function game() {
 
