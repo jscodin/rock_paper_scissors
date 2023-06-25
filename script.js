@@ -20,19 +20,19 @@ function playRound(playerSelection, computerSelection) {
     return "You win!";
   }
    else if (playerSelection === "rock" && computerSelection === "Rock") {
-    return "You draw!"
+    return "You draw!";
   }
   else if (playerSelection === "scissors" && computerSelection === "Paper") {
     return "You win!";
   }
   else if (playerSelection === "scissors" && computerSelection === "Scissors") {
-    return "You draw!"
+    return "You draw!";
   }
   else if (playerSelection === "paper" && computerSelection === "Rock") {
     return "You win!";
   }
   else if (playerSelection === "paper" && computerSelection === "Paper") {
-    return "You draw!"
+    return "You draw!";
   }
   else {
     return "You lose!";
@@ -53,7 +53,7 @@ function score(result) {
   }
   else if (result === "You lose!") {
     cScore++;
-    alert(`You win! Computer score: ${cScore}`)
+    alert(`You lose! Computer score: ${cScore}`)
     console.log(cScore + " computer");
   } else {
     alert(`You draw!`)
@@ -79,20 +79,23 @@ function playGame() {
   for (let i = 0; i < 5; i++) {
     game();
   }
-  
 }
 
 
 playGame();
+// finalResult(score);
 
-/* function finalResult() {
+/* function finalResult(finalScore) {
 
-  if (> computerScore) {
+  if (pScore > cScore) {
     return "Well done, you win!";
-  } else if (computerScore > playerScore){
+    alert("Well done, you win!");
+  } else if (pScore < cScore){
     return "Unlucky, try again next time";
+    alert("Unlucky, try again next time");
   } else {
-      return "Wow it's a tie!"
+      return "Wow it's a tie!";
+      alert("Wow it's a tie!");
     }
   
 } */
