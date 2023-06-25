@@ -38,18 +38,34 @@ function playRound(playerSelection, computerSelection) {
     return "You lose!";
   }
 
+
 }
 
+// Keeps score
+let pScore = 0;
+let cScore = 0;
+
+function score(result) {
+
+  if (result === "You win!") {
+    pScore++;
+    console.log(pScore + " player");
+  }
+  else if (result === "You lose!") {
+    cScore++;
+    console.log(cScore + " computer");
+  }
+
+}
 // This allows the player to input their choice and play the game
 function game() {
 
   const computerSelection = getComputerChoice();
   console.log(computerSelection);
   let playerPrompt = prompt("Choose your weapon: ");
-  let playerScore = playRound(playerPrompt.toLowerCase(), computerSelection)
-  console.log(playRound(playerPrompt, computerSelection));
-  console.log(playerScore);
-  return playerScore;
+  let roundResult = playRound(playerPrompt.toLowerCase(), computerSelection);
+  console.log(roundResult);
+  score(roundResult);
 
 }
 
@@ -62,26 +78,8 @@ function playGame() {
   
 }
 
-// Still needs work, but this should keep score of both player and computer
-// My understanding of increments needs refreshing probs
-function score() {
-
-  let pScore = 0;
-  let cScore = 0;
-
-  if (playRound() === "You win!") {
-   pScore++;
-    console.log(pScore + " player");
-  }
-  else if (playRound() === "You lose!") {
-    cScore++;
-    console.log(cScore + " computer");
-  }
-
-}
 
 playGame();
-
 
 /* function finalResult() {
 
