@@ -81,23 +81,19 @@ function playGame() {
   }
 }
 
-
-playGame();
-// finalResult(score);
-
-/* function finalResult(finalScore) {
+// Alerts who the winner of the game is
+function finalResult(finalScore) {
 
   if (pScore > cScore) {
-    return "Well done, you win!";
     alert("Well done, you win!");
   } else if (pScore < cScore){
-    return "Unlucky, try again next time";
     alert("Unlucky, try again next time");
   } else {
-      return "Wow it's a tie!";
       alert("Wow it's a tie!");
     }
   
-} */
+} 
 
 
+playGame();
+finalResult(score);
