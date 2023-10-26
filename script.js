@@ -1,15 +1,15 @@
 // this function gets computer to randomly select choice from the array
 function getComputerChoice() {
 
-    const pcList = [
-        "Rock",
-        "Paper",
-        "Scissors"
-    ];
+  const pcList = [
+    "Rock",
+    "Paper",
+    "Scissors"
+  ];
 
-const pcChoice = Math.floor(Math.random() * pcList.length);
-//console.log(pcList[pcChoice])
-return pcChoice, pcList[pcChoice];
+  const pcChoice = Math.floor(Math.random() * pcList.length);
+  //console.log(pcList[pcChoice])
+  return pcChoice, pcList[pcChoice];
 
 }
 
@@ -19,7 +19,7 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection === "rock" && computerSelection === "Scissors") {
     return "You win!";
   }
-   else if (playerSelection === "rock" && computerSelection === "Rock") {
+  else if (playerSelection === "rock" && computerSelection === "Rock") {
     return "You draw!";
   }
   else if (playerSelection === "scissors" && computerSelection === "Paper") {
@@ -74,26 +74,39 @@ function game() {
 }
 
 // Loops the game 5 times
-function playGame() {
+/*function playGame() {
 
   for (let i = 0; i < 5; i++) {
     game();
   }
-}
+}*/
 
 // Alerts who the winner of the game is
-function finalResult(finalScore) {
+function finalResult() {
 
   if (pScore > cScore) {
     alert("Well done, you win!");
-  } else if (pScore < cScore){
+  } else if (pScore < cScore) {
     alert("Unlucky, try again next time");
   } else {
-      alert("Wow it's a tie!");
-    }
-  
-} 
+    alert("Wow it's a tie!");
+  }
 
+}
 
-playGame();
+//game();
+//playGame();
 finalResult(score);
+
+//making the page dynamic with buttons etc.
+const btnr = document.querySelector('#rock');
+const btnp = document.querySelector('#paper');
+const btns = document.querySelector('#scissors');
+
+btnr.addEventListener('click', playRound(playerSelection, computerSelection));
+
+
+
+
+
+
