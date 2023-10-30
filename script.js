@@ -8,42 +8,52 @@ function getComputerChoice() {
   ];
 
   const pcChoice = Math.floor(Math.random() * pcList.length);
-  //console.log(pcList[pcChoice])
+  console.log(pcList[pcChoice])
+
   return pcChoice, pcList[pcChoice];
 
 }
-
-const computerSelection = getComputerChoice();
-console.log(computerSelection);
 
 // making the page dynamic with buttons etc.
 const btnr = document.querySelector('#rock');
 const btnp = document.querySelector('#paper');
 const btns = document.querySelector('#scissors');
 
-btnr.addEventListener('click', function() { console.log(playRound("rock", computerSelection)) });
-btnp.addEventListener('click', function() { console.log(playRound("paper", computerSelection)) });
-btns.addEventListener('click', function() { console.log(playRound("scissors", computerSelection)) });
+btnr.addEventListener('click', function() {
+  const computerChoice = getComputerChoice();
+  console.log(playRound("rock", computerChoice));
+});
+
+
+btnp.addEventListener('click', function() {
+  const computerChoice = getComputerChoice();
+  console.log(playRound("paper", computerChoice));
+});
+
+btns.addEventListener('click', function() {
+  const computerChoice = getComputerChoice();
+  console.log(playRound("scissors", computerChoice));
+});
 
 // This function plays the game and returns the result of each potential outcome
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerChoice) {
 
-  if (playerSelection === "rock" && computerSelection === "Scissors") {
+  if (playerSelection === "rock" && computerChoice === "Scissors") {
     return "You win!";
   }
-  else if (playerSelection === "rock" && computerSelection === "Rock") {
+  else if (playerSelection === "rock" && computerChoice === "Rock") {
     return "You draw!";
   }
-  else if (playerSelection === "scissors" && computerSelection === "Paper") {
+  else if (playerSelection === "scissors" && computerChoice === "Paper") {
     return "You win!";
   }
-  else if (playerSelection === "scissors" && computerSelection === "Scissors") {
+  else if (playerSelection === "scissors" && computerChoice === "Scissors") {
     return "You draw!";
   }
-  else if (playerSelection === "paper" && computerSelection === "Rock") {
+  else if (playerSelection === "paper" && computerChoice === "Rock") {
     return "You win!";
   }
-  else if (playerSelection === "paper" && computerSelection === "Paper") {
+  else if (playerSelection === "paper" && computerChoice === "Paper") {
     return "You draw!";
   }
   else {
@@ -57,9 +67,9 @@ function playRound(playerSelection, computerSelection) {
 //function game() 
 
 //let playerPrompt = prompt("Choose your weapon: ");
-//let roundResult = btnr.addEventListener('click', function() { playRound("rock", computerSelection) });
+//let roundResult = btnr.addEventListener('click', function() { playRound("rock", computerChoice) });
 //console.log(roundResult);
-//playRound(playerPrompt.toLowerCase(), computerSelection);
+//playRound(playerPrompt.toLowerCase(), computerChoice);
 //console.log(roundResult);
 //score(roundResult);
 
