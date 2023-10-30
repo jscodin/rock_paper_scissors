@@ -1,4 +1,4 @@
-// this function gets computer to randomly select choice from the array
+// Gets computer to randomly select choice
 function getComputerChoice() {
 
   const pcList = [
@@ -12,6 +12,18 @@ function getComputerChoice() {
   return pcChoice, pcList[pcChoice];
 
 }
+
+const computerSelection = getComputerChoice();
+console.log(computerSelection);
+
+// making the page dynamic with buttons etc.
+const btnr = document.querySelector('#rock');
+const btnp = document.querySelector('#paper');
+const btns = document.querySelector('#scissors');
+
+btnr.addEventListener('click', function() { console.log(playRound("rock", computerSelection)) });
+btnp.addEventListener('click', function() { console.log(playRound("paper", computerSelection)) });
+btns.addEventListener('click', function() { console.log(playRound("scissors", computerSelection)) });
 
 // This function plays the game and returns the result of each potential outcome
 function playRound(playerSelection, computerSelection) {
@@ -40,6 +52,19 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
+// This allows the player to input their choice and play the game
+
+//function game() 
+
+//let playerPrompt = prompt("Choose your weapon: ");
+//let roundResult = btnr.addEventListener('click', function() { playRound("rock", computerSelection) });
+//console.log(roundResult);
+//playRound(playerPrompt.toLowerCase(), computerSelection);
+//console.log(roundResult);
+//score(roundResult);
+
+
+
 // Keeps score
 let pScore = 0;
 let cScore = 0;
@@ -58,18 +83,6 @@ function score(result) {
   } else {
     alert(`You draw!`)
   }
-
-}
-
-// This allows the player to input their choice and play the game
-function game() {
-
-  const computerSelection = getComputerChoice();
-  console.log(computerSelection);
-  let playerPrompt = prompt("Choose your weapon: ");
-  let roundResult = playRound(playerPrompt.toLowerCase(), computerSelection);
-  console.log(roundResult);
-  score(roundResult);
 
 }
 
@@ -96,14 +109,8 @@ function finalResult() {
 
 //game();
 //playGame();
-finalResult(score);
+//finalResult(score);
 
-//making the page dynamic with buttons etc.
-const btnr = document.querySelector('#rock');
-const btnp = document.querySelector('#paper');
-const btns = document.querySelector('#scissors');
-
-btnr.addEventListener('click', playRound(playerSelection, computerSelection));
 
 
 
