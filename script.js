@@ -25,16 +25,36 @@ btnr.addEventListener('click', function() {
   const rrText = document.createElement('div');
   rrText.textContent = (playRound("rock", computerChoice));
   rr.appendChild(rrText);
+  const cc = document.querySelector('#compChoice')
+  const ccText = document.createElement('div');
+  ccText.textContent = `Computer chooses: ${computerChoice}`;
+  cc.appendChild(ccText);
   console.log(playRound("rock", computerChoice));
 });
 
 btnp.addEventListener('click', function() {
   const computerChoice = getComputerChoice();
+  const rr = document.querySelector('#roundResult');
+  const rrText = document.createElement('div');
+  rrText.textContent = (playRound("paper", computerChoice));
+  rr.appendChild(rrText);
+  const cc = document.querySelector('#compChoice')
+  const ccText = document.createElement('div');
+  ccText.textContent = `Computer chooses: ${computerChoice}`;
+  cc.appendChild(ccText);
   console.log(playRound("paper", computerChoice));
 });
 
 btns.addEventListener('click', function() {
   const computerChoice = getComputerChoice();
+  const rr = document.querySelector('#roundResult');
+  const rrText = document.createElement('div');
+  rrText.textContent = (playRound("scissors", computerChoice));
+  rr.appendChild(rrText);
+  const cc = document.querySelector('#compChoice')
+  const ccText = document.createElement('div');
+  ccText.textContent = `Computer chooses: ${computerChoice}`;
+  cc.appendChild(ccText);
   console.log(playRound("scissors", computerChoice));
 });
 
