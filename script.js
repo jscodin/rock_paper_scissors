@@ -37,14 +37,9 @@ btnr.addEventListener('click', function() {
 btnp.addEventListener('click', function() {
   const computerChoice = getComputerChoice();
   const rr = document.querySelector('#roundResult');
-  //const rrText = document.createElement('div');
   rr.textContent = (playRound("paper", computerChoice));
-  //rr.appendChild(rrText);
   const cc = document.querySelector('#compChoice')
-  //const ccText = document.createElement('div');
   cc.textContent = `Computer chooses: ${computerChoice}`;
-  //cc.appendChild(ccText);
-  //console.log(playRound("paper", computerChoice));
   result = playRound("paper", computerChoice);
   score(result);
 });
@@ -52,16 +47,11 @@ btnp.addEventListener('click', function() {
 btns.addEventListener('click', function() {
   const computerChoice = getComputerChoice();
   const rr = document.querySelector('#roundResult');
-  //const rrText = document.createElement('div');
   rr.textContent = (playRound("scissors", computerChoice));
-  //rr.appendChild(rrText);
   const cc = document.querySelector('#compChoice')
-  //const ccText = document.createElement('div');
   cc.textContent = `Computer chooses: ${computerChoice}`;
-  //cc.appendChild(ccText);
   result = playRound("scissors", computerChoice);
   score(result);
-  //console.log(playRound("scissors", computerChoice));
 });
 
 // This function plays the game and returns the result of each potential outcome
@@ -100,44 +90,28 @@ function score(result) {
   if (result === "You win!") {
     pScore++;
     const ps = document.querySelector("#playerScore");
-    // const pst = document.createElement('div');
     ps.textContent = `Your score: ${pScore}`;
-    //ps.appendChild(pst);
-    // (`Your score: ${pScore}`)
     console.log(pScore + " player");
   }
   else if (result === "You lose!") {
     cScore++;
     const cs = document.querySelector("#compScore");
-    //const cst = document.createElement('div');
     cs.textContent = `Computer score: ${cScore}`;
-    //cs.appendChild(cst);
-    //(`Computer score: ${cScore}`)
     console.log(cScore + " computer");
-  } else {
-    //const ps = document.querySelector("#compChoice");
-    //const pst = document.createElement('div');
-    //pst.textContent = `Your score: ${pScore}`;
-    //ps.appendChild(pst);
   }
-
+  if (pScore === 5 || cScore === 5) {
+    // Delay the execution of finalResult by 100 milliseconds
+    setTimeout(finalResult, 100);
+  }
 }
 
 // Alerts who the winner of the game is
 function finalResult() {
 
-  if (pScore > cScore) {
+  if (pScore === 5) {
     alert("Well done, you win!");
-  } else if (pScore < cScore) {
+  } else if (cScore === 5) {
     alert("Unlucky, try again next time");
-  } else {
-    alert("Wow it's a tie!");
   }
-
 }
-
-
-
-
-
 
