@@ -21,9 +21,12 @@ const btns = document.querySelector('#scissors');
 
 btnr.addEventListener('click', function() {
   const computerChoice = getComputerChoice();
+  const rr = document.querySelector('#roundResult');
+  const rrText = document.createElement('div');
+  rrText.textContent = (playRound("rock", computerChoice));
+  rr.appendChild(rrText);
   console.log(playRound("rock", computerChoice));
 });
-
 
 btnp.addEventListener('click', function() {
   const computerChoice = getComputerChoice();
